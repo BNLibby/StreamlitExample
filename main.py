@@ -7,7 +7,7 @@ def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode("utf-8")
 
-with open("./Data/data.dat", "rb") as infile:
+with open("data.dat", "rb") as infile:
     irradiance_df = pk.load(infile)
 
 csv = convert_df(irradiance_df)
@@ -20,7 +20,7 @@ def set_sidebar_tab(sidebar_tab_name):
 
 st.title("Solar Generation Report Dashboard")
 
-st.logo("./Data/RepsolLogo.png", link="https://www.repsol.com/es/index.cshtml")
+st.logo("RepsolLogo.png", link="https://www.repsol.com/es/index.cshtml")
 
 with st.sidebar:
         button1 = st.button("Overview", on_click=set_sidebar_tab, args=["Overview"], key="FryeOverview")
